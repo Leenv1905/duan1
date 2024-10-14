@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+footer{
+  text-align: center;
+  margin: 30px 0;
+  color: #f6fcdc;
+}
+
+body{
+  background: #ebfeff;
+  background-size: auto;
+}
+
+.ui.grid{
+margin-left: 10%;
+margin-right: 10%;
+margin-top: 2%;
+/* text-align: center; */
+}
+.ui.card{
+background: rgb(214, 252, 240);
+box-shadow: 5px 5px 5px rgb(247, 204, 185);
+border-radius: 10px;
+}
+
+iframe{
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  box-shadow: 0 0 20px rgb(216, 142, 188);
+  border: 3px double rgb(119, 212, 173);
+  }
+
+  /* https://stackoverflow.com/questions/45642391/how-to-change-the-color-of-a-cards-content-in-semantic-ui */
+
+.ui.secondary.menu{
+  margin-right: 5%;
+  margin-top: 5px;
+}
+
+.ui.secondary.menu>.right>.item{
+color: #4d5f64;
+font-size: 18px;
+font-family: Verdana;
+}
+
+.ui.secondary.menu>.right>.item:hover{
+background: rgb(135, 207, 248);
+color: white;
+}
+
+.ui.secondary.menu>.right>.ui.item:hover{
+  background: unset;
+
+  }
+
+.gtsp{
+  color: rgb(1, 26, 7);
+  font-size: 20PX;
+} 
+/* Thẻ này ở trang sanpham */
+
+h2.lienheh2{
+  color: brown;
+}
+div.lhe{
+  margin-top: 50px;
+  text-align: center;
+}
+/* Mấy thẻ này ở trang liên hệ */
+
+
+

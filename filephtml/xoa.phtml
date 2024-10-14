@@ -1,0 +1,51 @@
+<form method="post" action="xoa.php">
+        <h2 style="text-align: center;margin: 0;">
+            Form Xóa Sản Phẩm
+        </h2>
+        <hr>
+
+        <input type="hidden" name="id" value="<?=$_GET['id'] ?>">
+
+    
+        <p>
+            <label>Bạn có chắc muốn xóa:</label> <?=$dl['ten_sp']?>
+        </p>
+
+        <p style="text-align: center;">
+            <button type="reset" onclick="location='admin.php';">&equiv; Admin</button>
+            <button type="submit">&#128190; Xóa</button>
+        </p>
+</form>
+
+<style>
+    form {
+        font-size: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px gray;
+        background-color: #DF0029;
+        padding: 10px;
+        color: #F9F400;
+        
+    }
+
+    input, select, textarea {
+        font-size: 24px;
+    }
+    /* button{
+        font-size: 18px;
+        background: #00B2BF;
+    } */
+    button {
+        font-size: 18px;
+        padding: 5px;
+        border-radius: 5px;
+        background: #0099CC;
+        color: white;
+    }
+
+    label {
+        width: 15em;
+        display: inline-block;
+    }
+
+</style>

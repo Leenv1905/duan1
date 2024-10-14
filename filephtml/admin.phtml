@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<?php include "top.htm"?>
+
+<body>
+    
+<table>
+    <thead>
+        <tr>
+            <th class="trset">Mã Định Danh</th>
+            <th class="trset">Tên Sản Phẩm</th>
+            <th class="trset">Thương Hiệu</th>
+            <th class="trset">Màu Sắc</th>
+            <th class="trset">Size</th>
+            <th class="trset">Giới Tính</th>
+            <th class="trset">Ngày Nhập</th>
+            <th class="trset">Mô Tả</th>
+            <th class="trset">Giá</th>
+            <th class="trset">Ảnh Đại Diện</th>
+            <th class="trset">Menu</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($ds as &$dl): ?>
+            <tr class="dongsp" data-row-id="<?= $dl['id'] ?>" data-row-tensp1="<?= $dl['ten_sp'] ?>">
+                <td><?= $dl['id'] ?></td>
+                <td class="koset"><?= $dl['ten_sp'] ?></td>
+                <td><?= $dl['thuong_hieu'] ?></td>
+                <td><?= $dl['mau_sac'] ?></td>
+                <td><?= $dl['kich_thuoc'] ?></td>
+                <td><?= $dl['gioi_tinh_text'] ?></td>
+                <td><?= $dl['ngay_nhap_vi'] ?></td>
+                <td class="koset"><?= $dl['mo_ta'] ?></td>
+                <td><?= $dl['gia_tien'] ?></td>
+                <td>
+                    <img style="height: 50px;" src="<?= $dl['anh_sp'] ?>" alt="">
+                </td>
+                <td><button class="btn">Xem</button></td>
+                <td>
+                    <details>
+                        <summary class="sumxxx">***</summary>
+                        <a href="sua.php?id=<?= $dl['id'] ?>">
+                            <i class="icon pencil"></i>&nbsp;Sửa
+                        </a>
+                        <hr />
+                        <a href="xoa.php?id=<?= $dl['id'] ?>">
+                            <i class="icon trash"></i>&nbsp;Xóa</a>
+                        <hr />
+                        <a href="xem.php?id=<?= $dl['id'] ?>">
+                            <i class="icon eye"></i> Xem
+                        </a>
+                    </details>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="10" style="text-align: center;">
+
+            <a href="index.php" class="ui button">
+            <i class="icon add"></i> TRANG CHỦ </a>
+
+            <!-- <a href="admin.php" class="ui button">
+            <i class="icon add"></i> ADMIN </a> -->
+
+            <!-- <a href="them.php" class="ui button">
+            <i class="icon add"></i> THÊM </a>
+            </td> -->
+        </tr>
+
+    </tfoot>
+
+</table>
+
+
+<div class="ui modal small">
+    <i class="close icon"></i>
+
+    <div class="body">
+        LỖI CHƯA LOAD FORM
+    </div>
+
+</div>
+
+
+
+<style>
+.btn,    
+.sumxxx:hover{
+    cursor: pointer;
+}
+
+    table {
+        border-collapse: collapse;
+        width: 90%;
+        box-shadow: 0 0 10px #669999;
+        margin: 5% auto;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid none;
+        color: #000066;
+        font-size: 16px;
+        border-bottom: 1px solid gray;
+    }
+
+    /* Mô tả ko căn giữa */
+    .koset{
+        text-align: left;
+    }
+
+    /* Tiêu đề bảng */
+    .trset{
+        color: #103667;
+        text-wrap: nowrap
+    }
+
+
+    /*kịch bản: người dùng di chuột qua dòng nào, thì dòng đó sáng lên (highlights) */
+    tr.dongsp:hover {
+        /* background-color: #52f1fc; */
+        background-color: #66CC99;
+    }
+    td:hover{
+        color: #FFFBD1;
+        font-size: 18px;
+        text-shadow: 2px 2px #103667;
+    }
+
+    button {
+        padding: 5px;
+        border-radius: 5px;
+        background: #FFFAB3;
+        font-size: 18px;
+    }
+
+</style>
+
+
+</body>
+<footer><a>""</a></footer>
+
+</html>
+
+<!-- <script src="https://fomantic-ui.com/javascript/library/jquery.min.js" type="text/javascript"></script> -->
+  <!--Cài đặt các thư viện jQuery Plugins vào chỗ giữa này để semantic không bị ảnh hưởng-->
+  <link href="https://fomantic-ui.com/dist/semantic.min.css" rel="stylesheet" type="text/css">
+  <script src="https://fomantic-ui.com/dist/semantic.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" />
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+
+
+<!--Cài đặt thư viện jQuery HTML Editor, SummerNote độc lập, không phụ thuộc Bootstrap -->
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+
+
+<link rel="stylesheet" href="css/full.css">
+
+
+
+<!-- Phải cài thêm CSS ở đây để đè lên cái trên -->
+
+<script>
+
+
+    $('.ui.modal').modal(
+        {
+            onShow: function(){
+                $('.ui.modal .body form').css({
+                    'width': '100%'
+
+                });
+
+            },
+
+            // ĐOẠN NÀY ĐANG GÂY RA LỖI KHI SỬA
+            // onVisible: function(){
+            //     // Phải đợi cho Modal Hiện lên đã, rồi mới gọi summernote();
+            //     $('.HtmlEditor').summernote();
+            // }
+            // ĐOẠN NÀY ĐANG GÂY RA LỖI KHI SỬA
+        }
+    ); 
+
+    // BẤM VÀO NÚT XEM HIỆN LÊN XEM.PHP (Chưa được)
+
+    // $(document).ready(function(){
+    //         $(".btn").on("click", function(){
+    //             var rowId = $(this).data('row-id');
+    //             $('.ui.modal.body').load("xem.php?id="+rowId, function(){
+    //             $('.ui.modal').modal('show')};
+    //             )})});
+
+
+
+    $.contextMenu({
+        selector: 'tr',
+        callback: function (key, options) {
+        },
+
+        items: {
+            addModal: {
+                name: function(){
+                    return "Thêm (Modal)";
+                },
+                icon: "add",
+                callback: function (itemKey, opt, e) {
+
+                    $('.ui.modal .body').load("them.php", function(){
+                        $('.ui.modal').modal('show');
+                    });
+                }},
+
+            editModal: {
+                name: function(){
+                    return "Sửa (Modal)";
+                },
+                icon: "edit",
+                callback: function (itemKey, opt, e) {
+
+                    var rowId = $(this).data('row-id');
+
+                    $('.ui.modal .body').load("sua.php?id="+rowId, function(){
+                        $('.ui.modal').modal('show');
+                    });
+                }},
+
+            viewModal: {
+                name: function(){
+                    return "Xem (Modal)";
+                },
+                icon: "bi bi-eye",
+                callback: function (itemKey, opt, e) {
+                    var rowId = $(this).data('row-id');
+                    $('.ui.modal .body').load("xem.php?id="+rowId, function(){
+                        $('.ui.modal').modal('show');
+                    });
+                }},
+
+            deleteModal: {
+                name: "Xóa (Modal)",
+                icon: "delete",
+                callback: function (itemKey, opt, e) {
+
+                    var rowId = $(this).data('row-id');
+
+                    $('.ui.modal .body').load("xoa.php?id="+rowId, function(){
+                        $('.ui.modal').modal('show');
+                    });
+                }},
+
+
+            sep1: "---------",
+            add: {
+                name: function(){
+                    return "Home";
+                },
+                icon: "bi bi-house-heart",
+                callback: function (itemKey, opt, e) {
+                    // Điều hướng về home
+                    window.location = "index.php";
+                }},
+        }
+    });
+    
+
+    // Mỗi lần event contextmenu phát sinh từ thẻ tr
+    $('tr').on('contextmenu', function(e){
+        // $('.icon-edit span').text('x: ' + x);
+        // x++;
+        // console.log("test....");
+
+        // Sửa tên của item trong Menu Context ngay khi nó hiện lên
+        rowName = $(this).data('row-tensp1');
+        $('.context-menu-icon-edit span').text("Sửa "+rowName);
+        $('.context-menu-icon-delete span').text("Xóa "+rowName);
+
+        // Xem đang chưa được
+        // $('.context-menu-icon-view span').text("Xem "+rowName);
+
+
+        // <li class="context-menu-item context-menu-icon context-menu-icon-edit">
+        // <span>Sửa (Edit/Update)</span>
+        // </li>
+    }); 
+
+
+</script>
+
+
+
+

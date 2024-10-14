@@ -1,0 +1,83 @@
+<form>
+        <h2 style="text-align: center;margin:2px 0 5px 0; color: #A2007C">
+            Interview Sản Phẩm
+        </h2>
+        <hr>
+
+        <input type="hidden" name="id" value="<?=$_GET['id'] ?>" disabled>
+
+        <p>
+            <label>Tên Sản Phẩm:</label>
+            <input type="text" name="ten_sp" value="<?= $dl['ten_sp']?>" readonly>
+        </p>
+        <p>
+            <label>Kích Thước:</label>
+            <input type="number" name="kich_thuoc" value="<?= $dl['kich_thuoc']?>" disabled>
+        </p>
+        <p>
+            <label>Màu Sắc:</label>
+            <input type="text" name="mau_sac" value="<?= $dl['mau_sac']?>" disabled>
+        </p>
+        <p>
+            <label>Giá Tiền(USD):</label>
+            <input type="number" name="gia_tien" value="<?= $dl['gia_tien']?>" disabled>
+        </p>
+        <p>
+            <label>Thương Hiệu:</label>
+            <select name="nhóm_máu" disabled>
+                <option value="Adidas" <?= $dl['thuong_hieu']=='Adidas' ? 'selected' : '' ?> >Adidas</option>
+                <option value="Nike" <?= $dl['thuong_hieu']=='Nike' ? 'selected' : '' ?> >Nike</option>
+                <option value="Puma" <?= $dl['thuong_hieu']=='Puma' ? 'selected' : '' ?> >Puma</option>
+                <option value="Elite" <?= $dl['thuong_hieu']=='Elite' ? 'selected' : '' ?> >Elite</option>
+
+            </select>
+        </p>
+    
+        <p>
+            <label>Giới Tính:</label>
+            <input type="radio" name="gioi_tinh" value="1" disabled <?= $dl['gioi_tinh']==1 ? 'checked' : '' ?> ><span>Nam</span>
+            <input type="radio" name="gioi_tinh" value="0" disabled <?= $dl['gioi_tinh']==0 ? 'checked' : '' ?> ><span>Nữ</span>
+        </p>
+
+        <p>
+            <label>Ngày Nhập:</label>
+            <input type="date" name="ngay_nhap" value="<?= $dl['ngay_nhap_vi']?>" disabled>
+        </p>
+
+        <p>
+            <label>Ảnh Sản Phẩm:</label>
+            <img src="<?= $dl['anh_sp']?>" style="width: 100px;">
+        </p>
+ 
+        <p style="text-align: center;">
+            <button type="reset" onclick="location='admin.php';">&equiv; Admin</button>
+        </p>
+</form>
+
+<style>
+    form {
+        font-size: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px gray;
+        background-color: #94AAD6;
+        padding: 10px;
+        
+    }
+
+    input, select, textarea {
+        font-size: 24px;
+    }
+
+    label {
+        width: 9em;
+        display: inline-block;
+    }
+    button {
+        font-size: 18px;
+        padding: 5px;
+        border-radius: 5px;
+        background: #0099CC;
+        color: white;
+    }
+
+</style>

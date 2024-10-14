@@ -1,0 +1,100 @@
+<form class="ui form" method="post" action="<?= $action ?>">
+        <h2 style="text-align: center;margin: 0;">
+            <?=$form_header ?>
+        </h2>
+        <hr>
+
+        <input type="hidden" name="id" value="<?=$_GET['id'] ?>">
+
+        <p>
+            <label>Tên Sản Phẩm:</label>
+            <input type="text" name="ten_sp" required title="Bạn hãy nhập tên" value="<?= $dl['ten_sp']?>">
+        </p>
+        <p>
+            <label>Kích Thước:</label>
+            <input type="number" name="kich_thuoc" value="<?= $dl['kich_thuoc']?>" min="30" max="45" required title="Vui lòng nhập kích thước Size từ(30-45)">
+        </p>
+        <p>
+            <label>Màu Sắc:</label>
+            <input type="text" name="mau_sac" value="<?= $dl['mau_sac']?>" required title="Vui lòng nhập màu sắc">
+        </p>
+        <p>
+            <label>Giá Tiền(USD):</label>
+            <input type="number" name="gia_tien" value="<?= $dl['gia_tien']?>" min="0.01" max="999.99" required step="0.01" title="Hãy nhập giá tiền">
+        </p>
+        <p>
+            <!--Nếu thương hiệu của bản ghi nào
+            thì thẻ option đấy sẽ được chọn-->
+            <label>Thương Hiệu:</label>
+            <select required name="thuong_hieu">
+                 <option value="">---Không Chọn---</option>
+                <option value="Adidas" <?= $dl['thuong_hieu']=='Adidas' ? 'selected' : '' ?> >Adidas</option>
+                <option value="Nike" <?= $dl['thuong_hieu']=='Nike' ? 'selected' : '' ?> >Nike</option>
+                <option value="Puma" <?= $dl['thuong_hieu']=='Puma' ? 'selected' : '' ?> >Puma</option>
+                <option value="Elite" <?= $dl['thuong_hieu']=='Elite' ? 'selected' : '' ?> >Elite</option>
+            </select>
+        </p>
+    
+        <p>
+            <label>Giới Tính:</label>
+            <input type="radio" name="gioi_tinh" value="1" <?= $dl['gioi_tinh']==1 ? 'checked' : '' ?> required><span>Nam</span>
+            <input type="radio" name="gioi_tinh" value="0" <?= $dl['gioi_tinh']==0 ? 'checked' : '' ?> required><span>Nữ</span>
+        </p>
+    
+        <p>
+            <label>Ngày Nhập:</label>
+            <input type="date" name="ngay_nhap" value="<?= $dl['ngay_nhap_vi']?>" min="2020-01-01" max="2024-08-30" required>
+        </p>
+
+        <p>
+            <label>Link Ảnh SP:</label>
+            <input type="text" name="anh_sp" value="<?= $dl['anh_sp']?>" required>
+            <p>
+            <label>Preview:</label>
+            <img src="<?= $dl['anh_sp']?>" style="width: 100px;">
+            </p>
+        </p>
+    
+        <p>
+            <label>Mô Tả:</label>
+            <textarea name="mo_ta" class="HtmlEditor"></textarea>
+        </p>
+        <p style="text-align: center;">
+            <button type="reset" onclick="location='admin.php';">&#9962;Admin</button>
+            <button type="reset" onclick="location='admin.php';">&#10060; Hủy</button>
+            <button type="submit" onclick="location='them.php';">&#9989; Lưu</button>
+        </p>
+</form>
+
+<style>
+    form {
+        font-size: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px gray;
+        background-color: lightcyan;
+        padding: 10px;
+        
+    }
+
+    input, select, textarea {
+        font-size: 24px;
+    }
+
+    /* option[value="Adidas Elite Nike Puma"]{
+        font-size: 10px;
+    } */
+
+    button {
+        font-size: 18px;
+        padding: 5px;
+        border-radius: 5px;
+        background: #0099CC;
+        color: white;
+
+    }
+    button[type="submit"] {
+        background-color: #009966;
+        color: white;
+    }
+
+</style>
